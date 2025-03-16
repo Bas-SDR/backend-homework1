@@ -82,8 +82,8 @@ public class Main {
     //Bonus assignments
     //Bonus Assignment 1
     private static void evenOdd() {
-        System.out.print("Please fill in a number to check if it is even or odd:");
         Scanner scEvenOdd = new Scanner(System.in);
+        System.out.print("Please fill in a number to check if it is even or odd:");
         int evenOddNumber = scEvenOdd.nextInt();
 
         if (evenOddNumber % 2 == 0) {
@@ -100,8 +100,8 @@ public class Main {
     //Grade D = 6
     //Grade F = 1 through 5
     private static void grader() {
-        System.out.print("Please fill in your grade:");
         Scanner scGrade = new Scanner(System.in);
+        System.out.print("Please fill in your grade:");
         double gradeInput = scGrade.nextInt();
 
         if (gradeInput < 6.0) {
@@ -126,8 +126,8 @@ public class Main {
     //Max is 2.147 billion. Change int to long if bigger numbers
     private static void biggestNumber() {
         //Input for number 1
-        System.out.print("Please fill in number 1 to identify the bigger number:");
         Scanner scFirstNo = new Scanner(System.in);
+        System.out.print("Please fill in number 1 to identify the bigger number:");
         int firstNoInput = scFirstNo.nextInt();
         //Input for number 2
         System.out.print("Please fill in number 2 to identify the bigger number:");
@@ -145,8 +145,8 @@ public class Main {
 
     //Bonus Assignment 4
     private static void posNegInputChecker() {
-        System.out.print("Please fill in a number positive or negative:");
         Scanner sc = new Scanner(System.in);
+        System.out.print("Please fill in a number positive or negative:");
         int numberInputCheck = sc.nextInt();
 
         if (numberInputCheck > 0) {
@@ -159,14 +159,13 @@ public class Main {
     }
 
     //Bonus Assignment 5
-
     // kind between 0 and 10
     // puber between 11 and 18
     // volwassene between 19 and 65
     // senior 65+
     private static void ageClassification() {
-        System.out.print("Please fill in your age:");
         Scanner scAge = new Scanner(System.in);
+        System.out.print("Please fill in your age:");
         int ageInput = scAge.nextInt();
 
         if (ageInput < 11) {
@@ -182,8 +181,8 @@ public class Main {
 
     //Bonus Assignment 6
     private static void textLength() {
-        System.out.print("Please fill in a text:");
         Scanner scText = new Scanner(System.in);
+        System.out.print("Please fill in a text:");
         String textInputLength = scText.nextLine();
 
         if (textInputLength.length() < 10) {
@@ -197,8 +196,8 @@ public class Main {
 
     //Bonus Assignment 7
     private static void yearChecker() {
-        System.out.print("Please fill in a year:");
         Scanner scYear = new Scanner(System.in);
+        System.out.print("Please fill in a year:");
         int yearInput = scYear.nextInt();
 
         if (yearInput % 400 == 0) {
@@ -215,7 +214,17 @@ public class Main {
     //Bonus Assignment 8
     private static void biggestNoCheck() {
         Scanner scBigNo = new Scanner(System.in);
+        System.out.print("Fill in number 1:");
+        int bigNo1 = scBigNo.nextInt();
 
+        System.out.print("Fill in number 2:");
+        int bigNo2 = scBigNo.nextInt();
+
+        System.out.print("Fill in number 3:");
+        int bigNo3 = scBigNo.nextInt();
+
+        if (bigNo1 > bigNo2) ;
+        System.out.println();
     }
     //Bonus Assignment 9
     //Bonus Assignment 10
