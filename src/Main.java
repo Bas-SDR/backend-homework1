@@ -3,10 +3,10 @@ public class Main {
         int number = 0;
         int input1 = 4;
         int input2 = 20;
-        String name = "Henk";
+        String name = "Henk"; //Daan, Thijs, Gijs, Bas, Henk are valid options.
 
         hello();
-        positiveOrNegative(number);
+        positiveOrNegative(number); //Zero gives negative due to > 0.
         positiveOrZeroOrNegative(number);
         bartender(name);
         sum(input1, input2);
@@ -18,7 +18,7 @@ public class Main {
     }
 
     public static void positiveOrNegative(int number) {
-        if (number > 0) {
+        if (number > 0) { //Can make it >= to instead give a result of positive @ zero.
             System.out.println("This number is positive!");
         } else {
             System.out.println("This number is negative!");
@@ -60,6 +60,8 @@ public class Main {
     }
 
     public static void sum(int input1, int input2) {
-        System.out.println(input1 + " + " + input2 + " = " + (input1 + input2));
+        System.out.println(input1 + " + " + input2 + " = " + (input1 + input2)); //Care of brackets. First result gave back 420 due to no brackets
     }
+
+    public static
 }
