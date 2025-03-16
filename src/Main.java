@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -22,6 +23,9 @@ public class Main {
         ageClassification();
         textLength();
         yearChecker();
+        biggestNoCheck();
+        triangleSide();
+        calculator();
     }
 
     //Assignment 1
@@ -83,7 +87,7 @@ public class Main {
     //Bonus Assignment 1
     private static void evenOdd() {
         Scanner scEvenOdd = new Scanner(System.in);
-        System.out.print("Please fill in a number to check if it is even or odd:");
+        System.out.print("B1. Please fill in a number to check if it is even or odd:");
         int evenOddNumber = scEvenOdd.nextInt();
 
         if (evenOddNumber % 2 == 0) {
@@ -101,7 +105,7 @@ public class Main {
     //Grade F = 1 through 5
     private static void grader() {
         Scanner scGrade = new Scanner(System.in);
-        System.out.print("Please fill in your grade:");
+        System.out.print("B2. Please fill in your grade:");
         double gradeInput = scGrade.nextInt();
 
         if (gradeInput < 6.0) {
@@ -127,11 +131,10 @@ public class Main {
     private static void biggestNumber() {
         //Input for number 1
         Scanner scFirstNo = new Scanner(System.in);
-        System.out.print("Please fill in number 1 to identify the bigger number:");
+        System.out.print("B3. Please fill in number 1 to identify the bigger number:");
         int firstNoInput = scFirstNo.nextInt();
         //Input for number 2
-        System.out.print("Please fill in number 2 to identify the bigger number:");
-        Scanner scSecondNo = new Scanner(System.in);
+        System.out.print("B3. Please fill in number 2 to identify the bigger number:");
         int secondNoInput = scFirstNo.nextInt();
 
         if (firstNoInput > secondNoInput) {
@@ -146,7 +149,7 @@ public class Main {
     //Bonus Assignment 4
     private static void posNegInputChecker() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Please fill in a number positive or negative:");
+        System.out.print("B4. Please fill in a number positive or negative:");
         int numberInputCheck = sc.nextInt();
 
         if (numberInputCheck > 0) {
@@ -165,7 +168,7 @@ public class Main {
     // senior 65+
     private static void ageClassification() {
         Scanner scAge = new Scanner(System.in);
-        System.out.print("Please fill in your age:");
+        System.out.print("B5. Please fill in your age:");
         int ageInput = scAge.nextInt();
 
         if (ageInput < 11) {
@@ -182,7 +185,7 @@ public class Main {
     //Bonus Assignment 6
     private static void textLength() {
         Scanner scText = new Scanner(System.in);
-        System.out.print("Please fill in a text:");
+        System.out.print("B6. Please fill in a text:");
         String textInputLength = scText.nextLine();
 
         if (textInputLength.length() < 10) {
@@ -197,7 +200,7 @@ public class Main {
     //Bonus Assignment 7
     private static void yearChecker() {
         Scanner scYear = new Scanner(System.in);
-        System.out.print("Please fill in a year:");
+        System.out.print("B7. Please fill in a year:");
         int yearInput = scYear.nextInt();
 
         if (yearInput % 400 == 0) {
@@ -214,19 +217,64 @@ public class Main {
     //Bonus Assignment 8
     private static void biggestNoCheck() {
         Scanner scBigNo = new Scanner(System.in);
-        System.out.print("Fill in number 1:");
+        System.out.print("B8. Fill in number 1:");
         int bigNo1 = scBigNo.nextInt();
 
-        System.out.print("Fill in number 2:");
+        System.out.print("B8. Fill in number 2:");
         int bigNo2 = scBigNo.nextInt();
 
-        System.out.print("Fill in number 3:");
+        System.out.print("B8. Fill in number 3:");
         int bigNo3 = scBigNo.nextInt();
 
-        if (bigNo1 > bigNo2) ;
-        System.out.println();
+        if (bigNo1 > bigNo2 && bigNo1 > bigNo3) {
+            System.out.println(bigNo1 + " is the biggest number out of the 3");
+        } else if (bigNo1 < bigNo2 && bigNo2 > bigNo3) {
+            System.out.println(bigNo2 + " is the biggest number out of the 3");
+        } else System.out.println(bigNo3 + " is the biggest number out of the 3");
     }
-    //Bonus Assignment 9
-    //Bonus Assignment 10
 
+
+    //Bonus Assignment 9
+    private static void triangleSide() {
+        Scanner scBigNo = new Scanner(System.in);
+        System.out.print("B9. Fill in side 1 of the triangle:");
+        int triangle1 = scBigNo.nextInt();
+
+        System.out.print("B9. Fill in side 2 of the triangle:");
+        int triangle2 = scBigNo.nextInt();
+
+        System.out.print("B9. Fill in side 3 of the triangle:");
+        int triangle3 = scBigNo.nextInt();
+
+        if (triangle1 == triangle2 && triangle1 == triangle3) {
+            System.out.println("This triangle is equilateral"); //Gelijkzijdig
+        } else if (triangle1 == triangle2 || triangle2 == triangle3 || triangle1 == triangle3) {
+            System.out.println("This triangle is isosceles"); //Gelijkbenig
+        } else System.out.println("This triangle is scalene"); //Ongelijkzijdig
+    }
+
+    //Bonus Assignment 10
+    private static void calculator() {
+        Scanner scCalc = new Scanner(System.in);
+        Scanner scCalcStr = new Scanner(System.in);
+        //IntelliJ suggests switch statements, does feel easier to use in order to add the incorrect operator message
+        System.out.print("B10. Fill in number 1 for the calculator:");
+        int calc1 = scCalc.nextInt();
+
+        System.out.print("B10. Fill in number 2 for the calculator:");
+        int calc2 = scCalc.nextInt();
+
+        System.out.print("B10. Fill in your operator (+, -, /, or *) for the calculator:");
+        String calc3 = scCalcStr.nextLine();
+        //Below was suggested by IntelliJ to add Objects equals instead of "==".
+        if (Objects.equals(calc3, "+")) {
+            System.out.println(calc1 + " + " + calc2 + " = " + (calc1 + calc2));
+        } else if (Objects.equals(calc3, "-")) {
+            System.out.println(calc1 + " - " + calc2 + " = " + (calc1 - calc2));
+        } else if (Objects.equals(calc3, "/")) {
+            System.out.println(calc1 + " / " + calc2 + " = " + (calc1 / calc2));
+        } else if (Objects.equals(calc3, "*")) {
+            System.out.println(calc1 + " * " + calc2 + " = " + (calc1 * calc2));
+        } else System.out.println("You did not enter the correct operator");
+    }
 }
