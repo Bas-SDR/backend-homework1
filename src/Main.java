@@ -23,6 +23,9 @@ public class Main {
         grader(gradeNumber);
         biggestNumber(bigNumber1, bigNumber2);
         posNegInputChecker();
+        ageClassification();
+        textLength();
+        yearChecker();
     }
 
     //Assignment 1
@@ -143,9 +146,60 @@ public class Main {
     }
 
     //Bonus Assignment 5
+
+    // kind between 0 and 10
+    // puber between 11 and 18
+    // volwassene between 19 and 65
+    // senior 65+
+    private static void ageClassification() {
+        System.out.print("Please fill in your age:");
+        Scanner scAge = new Scanner(System.in);
+        int ageInput = scAge.nextInt();
+
+        if (ageInput < 11) {
+            System.out.println("With your age of " + ageInput + " you are considered a child");
+        } else if (ageInput < 19) {
+            System.out.println("With your age of " + ageInput + " you are considered an adolescent");
+        } else if (ageInput < 66) {
+            System.out.println("With your age of " + ageInput + " you are considered an adult");
+        } else {
+            System.out.println("With your age of " + ageInput + " you are considered a senior");
+        }
+    }
+
     //Bonus Assignment 6
+    private static void textLength() {
+        System.out.print("Please fill in a text:");
+        Scanner scText = new Scanner(System.in);
+        String textInputLength = scText.nextLine();
+
+        if (textInputLength.length() < 10) {
+            System.out.println("The provided text is less than 10 characters long"); //Includes spaces
+        } else if (textInputLength.length() < 21) {
+            System.out.println("The provided text is between 10 and 20 characters long");
+        } else {
+            System.out.println("The provided text is more than 20 characters long");
+        }
+    }
     //Bonus Assignment 7
+    private static void yearChecker() {
+        System.out.print("Please fill in a year:");
+        Scanner scYear = new Scanner(System.in);
+        int yearInput = scYear.nextInt();
+
+        if (yearInput % 400 == 0) {
+            System.out.println("The year " + yearInput + " is a leap year");
+        } else if (yearInput % 100 == 0) {
+            System.out.println("The year " + yearInput + " is not a leap year");
+        } else {
+            System.out.println("The year " + yearInput + " is a leap year");
+        }
+    }
     //Bonus Assignment 8
+    private static void biggestNoCheck() {
+        Scanner scBigNo = new Scanner(System.in);
+
+    }
     //Bonus Assignment 9
     //Bonus Assignment 10
 
