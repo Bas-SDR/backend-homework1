@@ -8,10 +8,6 @@ public class Main {
         int input1 = 4;
         int input2 = 20;
         String name = "Henk"; //Daan, Thijs, Gijs, Bas, Henk are valid options.
-        int evenOddNumber = 221;
-        double gradeNumber = 4;
-        int bigNumber1 = 2222222;
-        int bigNumber2 = 3123123;
 
         //Methods
         hello();
@@ -19,9 +15,9 @@ public class Main {
         positiveOrZeroOrNegative(number);
         bartender(name);
         sum(input1, input2);
-        evenOdd(evenOddNumber);
-        grader(gradeNumber);
-        biggestNumber(bigNumber1, bigNumber2);
+        evenOdd();
+        grader();
+        biggestNumber();
         posNegInputChecker();
         ageClassification();
         textLength();
@@ -85,7 +81,11 @@ public class Main {
 
     //Bonus assignments
     //Bonus Assignment 1
-    private static void evenOdd(int evenOddNumber) {
+    private static void evenOdd() {
+        System.out.print("Please fill in a number to check if it is even or odd:");
+        Scanner scEvenOdd = new Scanner(System.in);
+        int evenOddNumber = scEvenOdd.nextInt();
+
         if (evenOddNumber % 2 == 0) {
             System.out.println("This number is even!");
         } else {
@@ -99,40 +99,53 @@ public class Main {
     //Grade C = 7
     //Grade D = 6
     //Grade F = 1 through 5
-    private static void grader(double gradeNumber) {
-        if (gradeNumber < 6.0) {
+    private static void grader() {
+        System.out.print("Please fill in your grade:");
+        Scanner scGrade = new Scanner(System.in);
+        double gradeInput = scGrade.nextInt();
+
+        if (gradeInput < 6.0) {
             String gradeLetter = "F";
-            System.out.println("The grade " + gradeNumber + " is equivalent to an " + gradeLetter);
-        } else if (gradeNumber < 7.0) {
+            System.out.println("The grade " + gradeInput + " is equivalent to an " + gradeLetter);
+        } else if (gradeInput < 7.0) {
             String gradeLetter = "D";
-            System.out.println("The grade " + gradeNumber + " is equivalent to an " + gradeLetter);
-        } else if (gradeNumber < 8.0) {
+            System.out.println("The grade " + gradeInput + " is equivalent to an " + gradeLetter);
+        } else if (gradeInput < 8.0) {
             String gradeLetter = "C";
-            System.out.println("The grade " + gradeNumber + " is equivalent to an " + gradeLetter);
-        } else if (gradeNumber < 9.0) {
+            System.out.println("The grade " + gradeInput + " is equivalent to an " + gradeLetter);
+        } else if (gradeInput < 9.0) {
             String gradeLetter = "B";
-            System.out.println("The grade " + gradeNumber + " is equivalent to an " + gradeLetter);
+            System.out.println("The grade " + gradeInput + " is equivalent to an " + gradeLetter);
         } else {
             String gradeLetter = "A";
-            System.out.println("The grade " + gradeNumber + " is equivalent to an " + gradeLetter);
+            System.out.println("The grade " + gradeInput + " is equivalent to an " + gradeLetter);
         }
     }
 
     //Bonus Assignment 3
     //Max is 2.147 billion. Change int to long if bigger numbers
-    private static void biggestNumber(int bigNumber1, int bigNumber2) {
-        if (bigNumber1 > bigNumber2) {
-            System.out.println(bigNumber1 + " is bigger than " + bigNumber2);
-        } else if (bigNumber1 == bigNumber2) {
-            System.out.println(bigNumber1 + " is identical to " + bigNumber2);
+    private static void biggestNumber() {
+        //Input for number 1
+        System.out.print("Please fill in number 1 to identify the bigger number:");
+        Scanner scFirstNo = new Scanner(System.in);
+        int firstNoInput = scFirstNo.nextInt();
+        //Input for number 2
+        System.out.print("Please fill in number 2 to identify the bigger number:");
+        Scanner scSecondNo = new Scanner(System.in);
+        int secondNoInput = scFirstNo.nextInt();
+
+        if (firstNoInput > secondNoInput) {
+            System.out.println(firstNoInput + " is bigger than " + secondNoInput);
+        } else if (firstNoInput == secondNoInput) {
+            System.out.println(firstNoInput + " is identical to " + secondNoInput);
         } else {
-            System.out.println(bigNumber1 + " is smaller than " + bigNumber2);
+            System.out.println(firstNoInput + " is smaller than " + secondNoInput);
         }
     }
 
     //Bonus Assignment 4
     private static void posNegInputChecker() {
-        System.out.print("Please fill in a number:");
+        System.out.print("Please fill in a number positive or negative:");
         Scanner sc = new Scanner(System.in);
         int numberInputCheck = sc.nextInt();
 
@@ -181,6 +194,7 @@ public class Main {
             System.out.println("The provided text is more than 20 characters long");
         }
     }
+
     //Bonus Assignment 7
     private static void yearChecker() {
         System.out.print("Please fill in a year:");
@@ -191,10 +205,13 @@ public class Main {
             System.out.println("The year " + yearInput + " is a leap year");
         } else if (yearInput % 100 == 0) {
             System.out.println("The year " + yearInput + " is not a leap year");
-        } else {
+        } else if (yearInput % 4 == 0) {
             System.out.println("The year " + yearInput + " is a leap year");
+        } else {
+            System.out.println("The year " + yearInput + " is not a leap year");
         }
     }
+
     //Bonus Assignment 8
     private static void biggestNoCheck() {
         Scanner scBigNo = new Scanner(System.in);
