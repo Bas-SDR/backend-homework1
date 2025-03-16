@@ -1,3 +1,9 @@
+/.idea
+/node_modules
+/Target
+/Out
+/notes.md
+
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
