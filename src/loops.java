@@ -129,6 +129,7 @@ public class loops {
     }
 
     //Bonus assignment 10
+    //Was only able to solve via google and getting the answer itself.
     private static void starTriangle() {
         for (int i=1; i<10; i += 2)
         {
